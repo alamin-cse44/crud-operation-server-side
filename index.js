@@ -15,7 +15,7 @@ app.use(express.json());
 // user : crudOperation
 // pass : 8cMyTFrxxR71xbvS
 
-const uri = "mongodb+srv://crudOperation:8cMyTFrxxR71xbvS@cluster0.zslia.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.zslia.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function run(){
